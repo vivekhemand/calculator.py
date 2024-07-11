@@ -5,17 +5,17 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the Calculator API"}
+    return {"message": "Welcome to my calculator"}
 
 @app.get("/calculator")
 async def calculate(x: float, y: float, operation: str):
-    if operation == "add":
+    if operation == "addition":
         result = x + y
     elif operation == "subtract":
         result = x - y
-    elif operation == "multiply":
+    elif operation == "multiplication":
         result = x * y
-    elif operation == "divide":
+    elif operation == "division":
         result = x / y
     elif operation == "logarithm":
         result = math.log(x, y)  # Calculate logarithm base y of x
