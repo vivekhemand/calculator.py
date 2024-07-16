@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the Calculator API"}
+    return {"message": "Welcome to my Calculator API"}
 
 @app.get("addition")
 def addition(a:float,b:float):
@@ -22,13 +22,15 @@ def multiply(a: float, b: float):
 @app.get("/divide")
 def divide(a: float, b: float):
     if b == 0:
-        raise HTTPException(status_code=400, detail="Division by zero is not allowed")
-    return {"result": a / b}
+        raise HTTPException(status_code=400, detail="Division by zero is not allowed") 
+    else:
+      return {"result": a / b}
 
 @app.get("/log")
 def logarithm(x: float, base: float = 10):
     if x <= 0 or base <= 0 or base == 1:
-        raise HTTPException(status_code=400, detail="Invalid input for logarithm")
-    return {"result": math.log(x, base)}
+        raise HTTPException(status_code=400, detail="Invalid input for logarithm") 
+    else:
+        return {"result": math.log(x, base)}
 
 
