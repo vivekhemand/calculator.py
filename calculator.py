@@ -7,9 +7,9 @@ app = FastAPI()
 def read_root():
     return {"message": "Welcome to the Calculator API"}
 
-@app.get("/add")
-def add(a: float, b: float):
-    return {"result": a + b}
+@app.get("addition")
+def addition(a:float,b:float):
+    return{"result:",a+b}
 
 @app.get("/subtract")
 def subtract(a: float, b: float):
